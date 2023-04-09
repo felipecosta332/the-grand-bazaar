@@ -13,6 +13,7 @@ header {
 .logo {
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 .logo img {
   max-width: 40px;
