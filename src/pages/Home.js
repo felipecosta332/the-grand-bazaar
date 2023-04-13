@@ -1,6 +1,8 @@
 import { ProductCard } from "../components";
+import { useTitle } from "../hooks/useTitle";
 
-export const Home = () => {
+export const Home = ({ title }) => {
+  useTitle(title);
   const products = [
     {
       id: 1,
