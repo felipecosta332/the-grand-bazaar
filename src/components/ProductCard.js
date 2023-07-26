@@ -1,8 +1,11 @@
+import { useDispatch } from "react-redux";
+import {add, remove} from "../store/cartSlice"
 import { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
 import "./ProductCard.css";
 
 export const ProductCard = ({ product }) => {
+  const dispatch = useDispatch();
   const { cartList, addToCart, removeFromCart } = useCart();
   const [isInCart, setIsInCart] = useState(false);
   const { id, name, price, image } = product;
@@ -21,7 +24,7 @@ export const ProductCard = ({ product }) => {
         {isInCart ? (
           <button className="remove" onClick={() => removeFromCart(product)}>Remove</button>
         ) : (
-          <button onClick={() => addToCart(product)}>Add To Cart</button>
+          <button onClick={() => dispatch(add(product))}>Add To Cart</button>
         )}
       </div>
     </div>
