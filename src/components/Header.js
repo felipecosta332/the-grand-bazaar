@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "../assets/logo.svg";
 import "./Header.css";
-import { useCart } from "../context/CartContext";
 
 export const Header = () => {
   const cartList = useSelector(state => state.cartState.cartList);
